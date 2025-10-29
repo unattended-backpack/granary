@@ -1,0 +1,10 @@
+FROM petros:latest
+
+# Copy and run an entrypoint script which uses the unprivileged `petros` user to
+# generate attic tokens before letting root copy them to the host.
+COPY bootstrap.sh /bootstrap.sh
+COPY entrypoint.sh /entrypoint.sh
+
+# Explicitly switch to `root`, so the entrypoint can switch to `petros`.
+USER root
+ENTRYPOINT ["/entrypoint.sh"]
