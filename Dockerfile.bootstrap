@@ -1,4 +1,8 @@
-FROM petros:latest
+# Retrieve a specified image for building.
+ARG BUILD_IMAGE=unattended/petros:latest
+
+# Build from the base image.
+FROM ${BUILD_IMAGE}
 
 # Copy and run an entrypoint script which uses the unprivileged `petros` user to
 # generate attic tokens before letting root copy them to the host.
