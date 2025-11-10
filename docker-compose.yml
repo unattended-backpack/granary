@@ -1,6 +1,6 @@
 services:
   granary:
-    image: ghcr.io/zhaofengli/attic:c1cfee9b63e48d9cee18e538ca32f1721078de91
+    image: ${ATTIC_IMAGE:-unattended/attic:latest}
     container_name: granary
     restart: unless-stopped
     ports: ["8080:8080"]
@@ -19,6 +19,8 @@ services:
       build:
         context: .
         dockerfile: Dockerfile.bootstrap
+        args:
+          BUILD_IMAGE: ${BUILD_IMAGE:-unattended/petros:latest}
       container_name: bootstrap
       depends_on:
         - granary
