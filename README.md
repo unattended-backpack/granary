@@ -1,6 +1,8 @@
 # Granary
 
-A simple solution for hosting an [attic](https://github.com/zhaofengli/attic) server. Attic is a binary cache for Nix. We use it in place of all other Nix substituters to maintain control over our supply chain.
+> Gather the wheat into my barn.
+
+A simple solution for hosting an [attic](https://github.com/unattended-backpack/attic) server. Attic is a binary cache for Nix. We use it in place of all other Nix substituters to maintain control over our supply chain.
 
 ## Running
 
